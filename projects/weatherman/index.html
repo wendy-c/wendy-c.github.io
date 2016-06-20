@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Today's Weather</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<script type="text/javascript" src="app.js"></script> 
+	</head>
+	<body>
+		<div>
+			<h2 id="message"></h2>
+		</div>
+		<div class="weather-app">
+			<div class="left">
+				<div class="temperature"><span id="temperature">0</span>&deg;</div>
+				<div class="location"><span id="location">Unknown</span></div>
+			</div>
+
+			<div class="right">
+				<div class="top">
+					<div class="humidity">
+						<img src="imgs/humidity.png" height="16px"/>
+						<span id="humidity">0</span>%
+					</div>
+					<div class="wind">
+						<span id="wind">0</span> mph <span id="direction">N</span>
+					</div>
+				</div>
+				<div class="bottom">
+					<img id="icon" width="250px" src="mica_mugshot/mica_mugshot.png"/>
+				</div>
+			</div>
+		</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,101 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+html { 
+  background: #e6fff9; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;}
+
+body {
+	background-color:# fff;
+	font-family: 'Open Sans', arial, sans-serif;}
+
+.cal {
+	background-color: #fff;
+	font-size: 1em;
+	color: #474849;
+	padding: 1em;
+	width: 350px;
+	margin: 10px 30px 100px 20px;
+	box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
+	border-radius: 3px;
+	float: left;
+}
+
+img {
+	float:left;
+	width:25%;
+	margin: 20px 0px 0px 20px;
+}
+
+img.resize{
+    width:200px; /* you can use % */
+    height: auto;
+}
+
+input {
+	font-size: 1em;
+	line-height: 1.6em;
+	height: 45px;
+	padding: 0px 10px;
+	border: none;
+	margin-bottom: 2px;}
+
+select {
+	font-size: 1em;
+	line-height: 1.6em;
+	height: 45px;
+	border: none;
+	margin-bottom: 2px;
+	background-color: #ffcc99;
+	width: 100%;
+	color: #fff;
+	font-size: 1em;
+ 	font-weight: bold;
+ 	border-radius: 0px;
+}
+
+
+h2 {
+	margin: 0px;
+	font-size: 1.2em;}
+
+input[type=submit] {
+	background-color: #00cc99;
+	display: block;
+	margin: 20px auto 20px auto;
+	border-radius: 5px;
+	line-height: 1em;
+	padding: 0em 2em 0em 2em;
+	color: #fff;
+	-webkit-appearance: none;}
+
+input[type=submit]:hover {
+	background-color: #ffcc99;
+	cursor: pointer;}
+
+input[type=text] {
+	background-color: #ffcc99;
+	padding-left: 10px;
+	width: 94%;
+}
+
+input {
+	color: #fff;
+	font-size: 1em;
+ 	font-weight: bold;
+ }
+
+h2 {
+	color: #474849;
+	text-align: center;
+	font-size: 2em;
+	height: 60px;}
+
+
+
+::-webkit-input-placeholder {color: #fff; font-weight: bold;}	
+:-moz-placeholder {color: #fff; font-weight: bold;}
+::-moz-placeholder {color: #fff; font-weight: bold;}
+:-ms-input-placeholder {color: #fff; font-weight: bold;}

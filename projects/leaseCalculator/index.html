@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript &amp; jQuery - Chapter 10: Error Handling &amp; Debugging - console.assert()</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="leaseCalculator.css" />
+  </head>
+  <body>
+    <div>
+      <img class="logo" src="carwithbaby.png"/>
+    </div>
+    <div id="container">
+    <form class="cal" action="#" id="calculator">
+      <h2>Lease Calculator</h2>
+        <input type="text" title="Enter MSRP, forget the ',' just the number" name="msrp" id="msrp" placeholder="MSRP" />
+        <input type="text" title="Enter the selling price of the vehicle" name="cap" id="cap" placeholder="Capitalized Cost" />
+        <select title="how long are you leasing it for?" name="terms" id="terms">
+          <option value="36">Terms</option>
+          <option value="24">24 months</option>
+          <option value="27">27 months</option>
+          <option value="36">36 months</option>
+          <option value="48">48 months</option>
+        </select>
+        <select title="how many miles do you drive a year?" name="miles" id="miles">
+          <option value="10000">Mileage</option>
+          <option value="7500">7,500 miles a year</option>
+          <option value="10000">10,000 miles a year</option>
+          <option value="12000">12,000 miles a year</option>
+          <option value="15000">15,000 miles a year</option>
+        </select>
+        <input type="text" name="down" id="down" placeholder="Down Payment" />
+        <input type="text" name="residual" id="residual" placeholder="Residual Value" />
+        <input title="Enter Money Factor is decimal form, like: 0.00105" type="text" name="mf" id="mf" placeholder="Money Factor" />
+        <input type="text" name="acquisition" id="acquisition" placeholder="Acquisition Fee" />
+        <input type="text" title="Enter sales tax, if you live in SF enter: 9.25" name="tax" id="tax" placeholder="Sales Tax in %" />
+
+        <input type="submit" value="Calculate" id="  submit" />
+      </form>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="leaseCalculator.js"></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+html, body {
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+#map {
+	min-height: 300px;
+	margin-bottom: 20px
+}
+
+.logo {
+	margin-left: 35px;
+}
+
+.content {
+	margin-top: 20px;
+}
+
