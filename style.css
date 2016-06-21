@@ -3,11 +3,25 @@ body {
 }
 
 .projects img {
-	max-width: 450px;
+	max-width: 300px;
 }
 .icon {
 	text-align: center;
 }
 .icon img {
 	max-width: 40px;
+}
+
+.footer {
+	position: fixed;
+	left: 5px;
+	bottom: 0px;
+}
+
+.profile {
+	width: 300px;
+}
+
+.contact {
+	text-align: center;
 }
