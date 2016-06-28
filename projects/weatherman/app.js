@@ -91,6 +91,10 @@ function update(weather){
 		icon.src = "mica_mugshot/cloudy.png";
 		message.innerHTML = weather.loc + " is cloudy today!"
 	}
+	else{
+		icon.src = "mica_mugshot/cloudy.png";
+		message.innerHTML = "It's a nice day in " + weather.loc;
+	}
 	
 }
 
