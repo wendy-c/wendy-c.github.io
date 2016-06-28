@@ -1,44 +1,54 @@
 
 $(document).ready(function(){
-	var turn = 0;
-	var $s1, $s2, $s3, $s4, $s5, $s6, $s7, $s8, $s9;
+	var turn = -1;
+	//var $s1, $s2, $s3, $s4, $s5, $s6, $s7, $s8, $s9;
+	var squares = [0,0,0,0,0,0,0,0,0,0];
+
+	var name = {"1":"blue", "-1":"pink"};
+
+	//blue fox collect 1 when clicked, pink fox gets -1 when clicked, square is default as 0 when unclicked
+
+	var rows = [[1,2,3],[4,5,6],[7,8,9],[1,5,9],[3,5,7],[1,4,7],[2,5,8],[3,6,9]];
+
+	function sumRows(){
+		var temp = [];
+		rows.forEach(function(combo){
+			var score = 0;
+			combo.forEach(function(pos){
+				score += squares[pos];
+			});
+			temp.push(score);
+		});
+		return temp;
+	}
+
+	function testIfFilled(){
+		return squares.reduce(function(acc, cur, idx){
+			return idx !== 0 && cur === 0 ? false : acc;
+		}, true);
+	}
+
+	function testIfFilled2(){
+		return squares.slice(1).join("").indexOf("0") < 0;
+	}
+
 
 	function checkWinner(){
-	//append message to announce winner
-		if($s1 + $s2 + $s3 == 3
-			||$s4 + $s5 + $s6 == 3
-			||$s7 + $s8 + $s9 == 3
-			||$s1 + $s5 + $s9 == 3
-			||$s3 + $s5 + $s7 == 3
-			||$s1 + $s4 + $s7 == 3
-			||$s2 + $s5 + $s8 == 3
-			||$s3 + $s6 + $s9 == 3){
-			$("#message").empty();
-			alert("Mr. Blue Fox is the Winner!");
-		}
-		if($s1 + $s2 + $s3 == 0
-			||$s4 + $s5 + $s6 == 0
-			||$s7 + $s8 + $s9 == 0
-			||$s1 + $s5 + $s9 == 0
-			||$s3 + $s5 + $s7 == 0
-			||$s1 + $s4 + $s7 == 0
-			||$s2 + $s5 + $s8 == 0
-			||$s3 + $s6 + $s9 == 0){
-			$("#message").empty();
-			alert("Mr. Pink Fox is the Winner!");
-		}
-		//append message if it is a tie
-		else if($("#s1").hasClass("filled")
-			&& $("#s2").hasClass("filled")
-			&& $("#s3").hasClass("filled")
-			&& $("#s4").hasClass("filled")
-			&& $("#s5").hasClass("filled")
-			&& $("#s6").hasClass("filled")
-			&& $("#s7").hasClass("filled")
-			&& $("#s8").hasClass("filled")
-			&& $("#s9").hasClass("filled")){
-			$("#message").empty();
-			alert("Looks like we have a tie!");
+		var sums = sumRows();
+		// if blue fox wins result = 1, if pink fix wins result = -1
+		sums.forEach(function(score){
+			if(score === 3){
+				$("#message").empty();
+				alert("Mr. Blue Fox is the Winner!");
+			}
+			if(score === -3){
+				$("#message").empty();
+				alert("Mr. Pink Fox is the Winner!");
+			}
+		});
+		if(testIfFilled()&&result === 0){
+				$("#message").empty();
+				alert("Looks like we have a tie!");
 		}
 	}
 
@@ -46,205 +56,18 @@ $(document).ready(function(){
 	$('#message').append("Mr. Pink Fox, please begin!");
 
 	//when first square is clicked, show pink fox
-	$("#s1").click(function(){
-		if($(this).hasClass("filled")){
+	$("td").click(function(){
+		var pos = parseInt(this.id[1]);
+		if(squares[pos] !== 0){
 			$('#message').empty().append("A Fox already lives here");
 		}
-		else if(turn === 0 && !$(this).hasClass("filled")){
-			//when first square is clicked, show pink fox
-			$("#s1 #pink-fox").fadeIn("fast");
-			$(this).addClass("filled");
-			turn = 1;
-			$s1 = 0;
-			$("#message").empty().append("Mr. Blue Fox, it's your turn!");
-			//check each turn to see if we have a winner
+		else{
+			$("#s" + pos + " #" + name[turn] + "-fox").fadeIn("fast");
+			squares[pos] = turn;
+			turn = -turn;
+			$("#message").empty().append("Mr. " + name[turn][0].toUpperCase() + name[turn].substring(1) + " Fox, it's your turn!");
 			checkWinner();
 		}
-		else if(turn === 1 && !$(this).hasClass("filled")){
-			//switch player, when the next square is clicked, show opposite color fox
-			$("#s1 #blue-fox").fadeIn("fast");
-			$(this).addClass("filled");
-			turn = 0;
-			$s1 = 1;
-			$("#message").empty().append("Mr. Pink Fox, it's your turn!");
-			checkWinner();
-		}
-	});
-
-	$("#s2").click(function(){
-		if($(this).hasClass("filled")){
-			$('#message').empty().append("A Fox already lives here");
-		}
-		else if(turn === 0 && !$(this).hasClass("filled")){
-			$("#s2 #pink-fox").fadeIn("fast");
-			$(this).addClass("filled");
-			turn = 1;
-			$s2 = 0;
-			$("#message").empty().append("Mr. Blue Fox, it's your turn!");
-			checkWinner();
-		}
-		else if(turn === 1 && !$(this).hasClass("filled")){
-			$("#s2 #blue-fox").fadeIn("fast");
-			$(this).addClass("filled");
-			turn = 0;
-			$s2 = 1;
-			$("#message").empty().append("Mr. Pink Fox, it's your turn!");
-			checkWinner();
-		}
-	});
-
-	$("#s3").click(function(){
-		if($(this).hasClass("filled")){
-			$('#message').empty().append("A Fox already lives here");
-		}
-		else if(turn === 0 && !$(this).hasClass("filled")){
-			$("#s3 #pink-fox").fadeIn("fast");
-			$(this).addClass("filled");
-			turn = 1;
-			$s3 = 0;
-			$("#message").empty().append("Mr. Blue Fox, it's your turn!");
-			checkWinner();
-		}
-		else if(turn === 1 && !$(this).hasClass("filled")){
-			$("#s3 #blue-fox").fadeIn("fast");
-			$(this).addClass("filled");
-			turn = 0;
-			$s3 = 1;
-			$("#message").empty().append("Mr. Pink Fox, it's your turn!");
-			checkWinner();
-		}
-	});
-
-	$("#s4").click(function(){
-		if($(this).hasClass("filled")){
-			$('#message').empty().append("A Fox already lives here");
-		}
-		else if(turn === 0 && !$(this).hasClass("filled")){
-			$("#s4 #pink-fox").fadeIn("fast");
-			$(this).addClass("filled");
-			turn = 1;
-			$s4 = 0;
-			$("#message").empty().append("Mr. Blue Fox, it's your turn!");
-			checkWinner();
-		}
-		else if(turn === 1 && !$(this).hasClass("filled")){
-			$("#s4 #blue-fox").fadeIn("fast");
-			$(this).addClass("filled");
-			turn = 0;
-			$s4 = 1;
-			$("#message").empty().append("Mr. Pink Fox, it's your turn!");
-			checkWinner();
-		}
-	});
-
-	$("#s5").click(function(){
-		if($(this).hasClass("filled")){
-			$('#message').empty().append("A Fox already lives here");
-		}
-		else if(turn === 0 && !$(this).hasClass("filled")){
-			$("#s5 #pink-fox").fadeIn("fast");
-			$(this).addClass("filled");
-			turn = 1;
-			$s5 = 0;
-			$("#message").empty().append("Mr. Blue Fox, it's your turn!");
-			checkWinner();
-		}
-		else if(turn === 1 && !$(this).hasClass("filled")){
-			$("#s5 #blue-fox").fadeIn("fast");
-			$(this).addClass("filled");
-			turn = 0;
-			$s5 = 1;
-			$("#message").empty().append("Mr. Pink Fox, it's your turn!");
-			checkWinner();
-		}
-	});
-
-	$("#s6").click(function(){
-		if($(this).hasClass("filled")){
-			$('#message').empty().append("A Fox already lives here");
-		}
-		else if(turn === 0 && !$(this).hasClass("filled")){
-			$("#s6 #pink-fox").fadeIn("fast");
-			$(this).addClass("filled");
-			turn = 1;
-			$s6 = 0;
-			$("#message").empty().append("Mr. Blue Fox, it's your turn!");
-			checkWinner();
-		}
-		else if(turn === 1 && !$(this).hasClass("filled")){
-			$("#s6 #blue-fox").fadeIn("fast");
-			$(this).addClass("filled");
-			turn = 0;
-			$s6 = 1;
-			$("#message").empty().append("Mr. Pink Fox, it's your turn!");
-			checkWinner();
-		}
-	});
-
-	$("#s7").click(function(){
-		if($(this).hasClass("filled")){
-			$('#message').empty().append("A Fox already lives here");
-		}
-		else if(turn === 0 && !$(this).hasClass("filled")){
-			$("#s7 #pink-fox").fadeIn("fast");
-			$(this).addClass("filled");
-			turn = 1;
-			$s7 = 0;
-			$("#message").empty().append("Mr. Blue Fox, it's your turn!");
-			checkWinner();
-		}
-		else if(turn === 1 && !$(this).hasClass("filled")){
-			$("#s7 #blue-fox").fadeIn("fast");
-			$(this).addClass("filled");
-			turn = 0;
-			$s7 = 1;
-			$("#message").empty().append("Mr. Pink Fox, it's your turn!");
-			checkWinner();
-		}
-	});
-
-	$("#s8").click(function(){
-		if($(this).hasClass("filled")){
-			$('#message').empty().append("A Fox already lives here");
-		}
-		else if(turn === 0 && !$(this).hasClass("filled")){
-			$("#s8 #pink-fox").fadeIn("fast");
-			$(this).addClass("filled");
-			turn = 1;
-			$s8 = 0;
-			$("#message").empty().append("Mr. Blue Fox, it's your turn!");
-			checkWinner();
-		}
-		else if(turn === 1 && !$(this).hasClass("filled")){
-			$("#s8 #blue-fox").fadeIn("fast");
-			$(this).addClass("filled");
-			turn = 0;
-			$s8 = 1;
-			$("#message").empty().append("Mr. Pink Fox, it's your turn!");
-			checkWinner();
-		}
-	});
-
-	$("#s9").click(function(){
-		if($(this).hasClass("filled")){
-			$('#message').empty().append("A Fox already lives here");
-		}
-		else if(turn === 0 && !$(this).hasClass("filled")){
-			$("#s9 #pink-fox").fadeIn("fast");
-			$(this).addClass("filled");
-			turn = 1;
-			$s9 = 0;
-			$("#message").empty().append("Mr. Blue Fox, it's your turn!");
-			checkWinner();
-		}
-		else if(turn === 1 && !$(this).hasClass("filled")){
-			$("#s9 #blue-fox").fadeIn("fast");
-			$(this).addClass("filled");
-			turn = 0;
-			$s9 = 1;
-			$("#message").empty().append("Mr. Pink Fox, it's your turn!");
-			checkWinner();
-		}	
 	});
 
 });
