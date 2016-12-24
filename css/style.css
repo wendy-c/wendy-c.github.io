@@ -1,0 +1,124 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+nav .brand-logo {
+  padding-left: 10px; 
+  color: #64b5f6;
+  font-weight: 300;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.header {
+  color: #64b5f6;
+  margin-top: 10%;
+}
+
+.bub {
+  display: inline;
+  border-radius: 30px;
+  background-color: #fff;
+  opacity: 0.7;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.icon {
+  margin-top: 20px;
+  margin-right: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.button-collapse {
+  margin-right: 2px;
+  color: grey;
+}
+
+.parallax-container {
+  min-height: 550px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 20%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+
+.bk {
+  background-color: #f5f5f5;
+}
+
+#map {
+  height: 300px;
+  width: 100%;
+  background-color: grey;
+}
+
+.send-btn {
+  float: right;
+  size: 5.5em;
+  color: #64b5f6;
+  border-radius: 30px;
+  border: 1px solid #64b5f6;
+  background-color: #fff !important;
+  opacity: 0.5;
+}
+
+.input-field input[type=text]:focus + label {
+  color: #64b5f6;
+}
+
+.input-field input[type=email]:focus + label {
+  color: #64b5f6;
+}
+
+.input-field input[type=text]:focus {
+ border-bottom: 1px solid #64b5f6;
+ box-shadow: 0 1px 0 0 #64b5f6;
+}
+
+.input-field input[type=email]:focus {
+ border-bottom: 1px solid #64b5f6;
+ box-shadow: 0 1px 0 0 #64b5f6;
+}
