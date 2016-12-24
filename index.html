@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css"/>
   <script src="https://use.fontawesome.com/6837f90538.js"></script>
 </head>
 <body>
@@ -99,27 +100,61 @@
     <div class="section">
       <div class="row">
         <div class="col s12 center" id="resume">
-        <br><br>
-          <div class="center-align download" download="wendycheung.pdf"><i class="fa fa-download fa-fw" aria-hidden="true"></i>Download Resume</div>
-        <br><br>
-          <ul class="v-timeline mt50">
+<div class="center-align">
+  <span class="download" download="wendycheung.pdf"><i class="fa fa-download fa-fw" aria-hidden="true"></i>Download Resume</span>
+</div>
+          <ul>
             <li>
-              <h3 class="left-align heading wow fadeInDown" data-wow-duration="0.7s" data-wow-delay="0s"><i class="fa fa-laptop"></i> Technical Skills</h3>
+              <div class="col s12 m12 left-align heading wow fadeInDown" data-wow-duration="0.7s" data-wow-delay="0s"><i class="fa fa-laptop"></i> Technical Skills</div>
             </li>
-              
+            <li class="col m3">
+              <p>In Depth</p>
+            </li>
+            <li class="col m9">
+              <div class="chip">Javascript(ES6)</div>
+              <div class="chip">HTML5/CSS3</div>
+              <div class="chip">JQuery</div>
+              <div class="chip">React/Redux</div>
+              <div class="chip">Angular</div>
+              <div class="chip">Node/Express</div>
+              <div class="chip">SQL Database/Sequelize</div>
+              <div class="chip">Bootstrap</div>
+              <div class="chip">Materialize</div>
+              <div class="chip">Git</div>
+              <div class="chip">Webpack</div>
+            </li>
+            <br><br>
+            <li class="col m3">
+              <p>I've dabbled in</p>
+            </li>
+            <li class="col m9">
+              <div class="chip">React Native</div>
+              <div class="chip">Redis</div>
+              <div class="chip">Backbone</div>
+              <div class="chip">MongoDB/Mongoose</div>
+              <div class="chip">D3</div>
+              <div class="chip">Gulp</div>
+              <div class="chip">Grunt</div>
+              <div class="chip">TDD(Jasmine/Mocha/Chai)</div>
+              <div class="chip">Heroku</div>
+            </li>              
           </ul>
-
+          <br><br>
+          <br><br>
           <!--work experience -->
-          <ul class="v-timeline mt50">
+          <ul>
             <li>
-              <h3 class="v-heading wow fadeInDown" data-wow-duration="0.7s" data-wow-delay="0s"><i class="fa fa-paper-plane-o"></i> Previous Work Experience</h3>
+              <div class="col s12 m12 left-align heading wow fadeInDown" data-wow-duration="0.7s" data-wow-delay="0s"><i class="fa fa-paper-plane-o"></i> Work Experience</div>
             </li>
+            <br><br>
+
             <li>
-              <time class="v-time wow fadeInLeft" data-wow-duration="0.7s" data-wow-delay="0s"><span>2012 - 2016</span></time>
-              <div class="v-icon" data-toggle="collapse" data-target="#toggle-1"><i class="fa fa-plus"></i></div>
-              <div class="v-label wow fadeInRight" data-wow-duration="0.7s" data-wow-delay="0s" >
-                <h4><a href="#" data-toggle="collapse" data-target="#toggle-1">Sonic Automotive</a></h4>
-                <div id="toggle-1" class="collapse">
+              <div class="col s12 m8 left-align wow fadeInLeft" data-wow-duration="0.7s" data-wow-delay="0s" >
+                <div class="header1">Sonic Automotive</div>
+              </div>
+              <div class="col s12 m4 right-align time wow fadeInRight" data-wow-duration="0.7s" data-wow-delay="0s"><span>2012 - 2016</span></div>
+              <div class="col m12 wow fadeInLeft" data-wow-duration="0.7s" data-wow-delay="0s">
+                <div id="toggle-1" class="left-align">
                   <h5 class="resume-job-title">Internet Sales Manager</h5>
                   <p>
                     ● &nbsp Managed and responded to online vehicle inquiries, handled over $10M worth of sales annually <br />
@@ -128,39 +163,44 @@
                 </div>
               </div>
             </li>
+
             <li>
-              <time class="v-time wow fadeInLeft" data-wow-duration="0.7s" data-wow-delay="0.2s"><span>2011 - 2012</span></time>
-              <div class="v-icon" data-toggle="collapse" data-target="#toggle-3"><i class="fa fa-plus"></i></div>
-              <div class="v-label wow fadeInRight" data-wow-duration="0.7s" data-wow-delay="0.2s">
-                <h4><a href="#" data-toggle="collapse" data-target="#toggle-3">San Joaquin Delta College</a></h4>
-                <div id="toggle-3" class="collapse">
+              <div class="col s12 m8 left-align wow fadeInRight" data-wow-duration="0.7s" data-wow-delay="0.2s">
+                <div class="header1">San Joaquin Delta College</div>
+              </div>
+              <div class="col s12 m4 time right-align wow fadeInLeft" data-wow-duration="0.7s" data-wow-delay="0.2s"><span>2011 - 2012</span></div>
+              <div class="col m12 wow fadeInLeft left-align" data-wow-duration="0.7s" data-wow-delay="0.2s">
                 <h5 class="resume-job-title">Fashion Instructor</h5>
                 <p>
                   ● &nbsp Taught traditional patternmaking to students and provided them the essential foundation they needed in order to be successful in this art  <br />
                   ● &nbsp Guided students to build their own collection from ideas to final products that got showcased on the runway
                 </p>
-                </div>
               </div>
             </li>
           </ul>
+          <br><br>
+          <br><br>
           <!-- education -->
-          <ul class="v-timeline mt50">
+          <ul>
             <li>
-              <h3 class="v-heading wow fadeInDown" data-wow-duration="0.7s" data-wow-delay="0s"><i class="fa fa-graduation-cap"></i> Education</h3>
+              <div class="col s12 m12 left-align heading wow fadeInDown" data-wow-duration="0.7s" data-wow-delay="0s"><i class="fa fa-graduation-cap"></i> Education</div>
             </li>
+            <br><br>
             <li>
-              <time class="v-time wow fadeInLeft" data-wow-duration="0.7s" data-wow-delay="0.3s" datetime="2013-04-18"><span>2016</span></time>
-              <div class="v-icon" data-toggle="collapse" data-target="#toggle-2"><i class="fa fa-minus"></i></div>
-              <div class="v-label wow fadeInRight" data-wow-duration="0.7s" data-wow-delay="0.3s">
-                <h4><a href="#" data-toggle="collapse" data-target="#toggle-2">Hack Reactor (San Francisco)</a></h4>
+              <div class="col s12 m8 left-align wow fadeInRight" data-wow-duration="0.7s" data-wow-delay="0.3s">
+                <div class="header1">Hack Reactor, San Francisco</div>
+              </div>
+              <div class="col s12 m4 time right-align wow fadeInRight" data-wow-duration="0.7s" data-wow-delay="0.3s"><span>2016</span></div>
+              <div class="col m12 left-align">
                 <p id="toggle-2" class="collapse in">Advanced Software Engineering Immersive Program</p>
               </div>
             </li>
             <li>
-              <time class="v-time wow fadeInLeft" data-wow-duration="0.7s" data-wow-delay="0.4s"><span>2004 - 2008</span></time>
-              <div class="v-icon" data-toggle="collapse" data-target="#toggle-5"><i class="fa fa-minus"></i></div>
-              <div class="v-label wow fadeInRight" data-wow-duration="0.7s" data-wow-delay="0.4s">
-                <h4><a href="#" data-toggle="collapse" data-target="#toggle-5">Academy of Art University, San Francisco</a></h4>
+              <div class="col s12 m8 left-align wow fadeInLeft" data-wow-duration="0.7s" data-wow-delay="0.4s">
+                <div class="header1">Academy of Art University, San Francisco</div>
+              </div>
+              <div class="col s12 m4 right-align time wow fadeInRight" data-wow-duration="0.7s" data-wow-delay="0.4s"><span>2008</span></div>
+              <div class="col m12 left-align">
                 <p id="toggle-5" class="collapse in">Bachelor of Fine Arts in Fashion Design</p>
               </div>
             </li>
@@ -171,6 +211,9 @@
     </div>
   </div>
 </div>
+<div class="container">
+  I speak
+</div>
 <!-- end of Resume -->
 
   <div class="parallax-container valign-wrapper">
@@ -178,9 +221,7 @@
       <div class="container">
       <br><br>
         <div class="row center">
-          <blockquote>
-            <h5 class="flow-text">"Goodbye, said the fox. And now here is my secret, a very simple secret. It is only with the heart that one can see rightly. What is essential is invisible to the eye." - Antoine de Saint-Exupéry</h5>
-          </blockquote>
+            <h5 class="header-pax col s12 light">"Goodbye, said the fox. And now here is my secret, a very simple secret. It is only with the heart that one can see rightly. What is essential is invisible to the eye." - Antoine de Saint-Exupéry</h5>
         </div>
       </div>
     </div>
@@ -266,7 +307,7 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <h5 class="header col s12 light"></h5>
         </div>
       </div>
     </div>
@@ -276,7 +317,7 @@
   <footer class="page-footer white">
     <div class="footer-copyright white">
       <div class="container">
-      <a class="brown-text text-lighten-3" href="mailto:wendywancheung@gmail.com">Made by Wendy Cheung</a>
+      <a class="brown-text text-lighten-3" href="mailto:wendywancheung@gmail.com">Made by Wendy Cheung using jQuery, Materializecss, wow.js, animate.css</a>
       </div>
     </div>
   </footer>
