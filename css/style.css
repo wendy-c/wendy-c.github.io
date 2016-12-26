@@ -38,6 +38,16 @@ p {
   font-size: 1.8em;
 }
 
+.header2 {
+  font-size: 2.3em;
+  padding: 15px;
+}
+
+.p-des {
+  color: #64b5f6;
+  font-size: 1.2em;
+}
+
 .time {
   color: #64b5f6;
   font-size: 1.3em;
@@ -70,6 +80,10 @@ p {
   border-bottom: 2px dashed orange;
   margin-bottom: 30px;
   margin-top: 30px;
+}
+
+.bk-grey {
+  background-color: #f5f5f5;
 }
 
 .parallax-container {
@@ -116,11 +130,69 @@ footer.page-footer {
   cursor: pointer;
 }
 
-blockquote{
-  margin: 20px 0;
-  padding-left: 1.5rem;
+.project {
+  /*position: relative;*/
+  width: 100%;
+}
+
+.project-img, .project-img1, .project-img2, .project-img3, .project-img4 {
+  display: block;
+  width: 80%;
+  margin: 20px auto;
+  padding: 2px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.p-link {
+  color: orange;
+  font-size: 1.3em;
+}
+
+.skillbox {
+  padding-top: 20px;
+}
+
+.p-slider {
+  position: relative;
+  width: 100%;
+}
+
+.p-slider i {
+  font-size: 1.8em;
+}
+
+.display-left, .display-right {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
   color: #64b5f6;
-  border-left: 5px solid #64b5f6;
+  cursor: pointer;
+}
+
+.display-left{
+ left: 0;
+}
+
+.display-left:hover, .display-right:hover {
+  color: grey;
+}
+
+.display-right{
+ right: 0;
+}
+
+.tabs .indicator {
+  background-color: orange !important;
+}
+
+.tabs li.tab a {
+  color: grey !important;
+
+}
+
+.carousel.carousel-slider {
+  height: 500px;
 }
 
 #map {
