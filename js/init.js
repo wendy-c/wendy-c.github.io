@@ -51,7 +51,7 @@ getPie('graph1', 'English');
 getPie('graph2', 'Cantonese');
 getPie('graph3', 'Mandarin');
 
-
+// Google Map
 function initMap() {
   console.log('invoked?')
   var sb = {lat: 37.6305, lng: -122.4111};
@@ -73,6 +73,20 @@ function initMap() {
     $('.parallax').parallax();
     $('.carousel.carousel-slider').carousel({full_width: true});
     $('.materialboxed').materialbox();
+
+    // smooth scroll
+    $('a[href*="#"]:not([href="#"])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: target.offset().top
+          }, 1000);
+          return false;
+        }
+      }
+    });
 
     var options = [
       // {selector: '#about-des', offset: 50, callback: function(el) {
@@ -135,6 +149,14 @@ function initMap() {
       var currentClass = $(this).data('val');
       console.log(currentClass, 'wat is current class?');
       plusDivs(1, currentClass);
+    });
+
+    // weatherman modal
+    $('.p-mini1').on('click', function() {
+      $('.weatherman').css('display', 'block');
+    });
+    $('.close-m1').on('click', function() {
+      $('.weatherman').css('display', 'none');
     });
 
   }); // end of document ready
