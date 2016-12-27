@@ -149,7 +149,6 @@ footer.page-footer {
 }
 
 .project {
-  /*position: relative;*/
   width: 100%;
 }
 
@@ -172,6 +171,15 @@ footer.page-footer {
 .skillbox {
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+.a-skillbox {
+  padding-top: 0;
+}
+
+.a-img {
+  margin-top: 18%;
+  margin-left: 0;
 }
 
 .p-slider {
