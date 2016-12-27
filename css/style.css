@@ -35,6 +35,7 @@ p {
 
 .header1 {
   color: #64b5f6;
+  font-weight: 400;
   font-size: 1.8em;
 }
 
@@ -135,7 +136,7 @@ footer.page-footer {
   width: 100%;
 }
 
-.project-img, .project-img1, .project-img2, .project-img3, .project-img4 {
+.p-img, .p-img1, .p-img2, .p-img3, .p-img4, .p-img5 {
   display: block;
   width: 80%;
   margin: 20px auto;
@@ -151,6 +152,7 @@ footer.page-footer {
 
 .skillbox {
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .p-slider {
@@ -160,6 +162,14 @@ footer.page-footer {
 
 .p-slider i {
   font-size: 1.8em;
+}
+
+.p-mini {
+  width: 100%;
+  height: 200px;
+  padding: 2px;
+  border: 1px solid grey;
+  border-radius: 5px;
 }
 
 .display-left, .display-right {
@@ -257,4 +267,35 @@ footer.page-footer {
   .header h2 {
     font-size: 0.6em;
   }
+}
+
+/* pie chart */
+.chart {
+    position:relative;
+    width:180px; height:180px;
+    margin-bottom: 20px;
+}
+canvas {
+    display: block;
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    margin: 0 auto;
+}
+.pie {
+    color:#555;
+    display:block;
+    text-align:center;
+    width:100%;
+    font-family:sans-serif;
+    font-size:40px;
+    font-weight:100;
+}
+
+.pie-t {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding-top: 45px;
 }

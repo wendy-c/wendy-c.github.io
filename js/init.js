@@ -1,18 +1,70 @@
-  // function initMap() {
-  //   console.log('invoked?')
-  //   var sb = {lat: 37.6305, lng: -122.4111};
-  //   var map = new google.maps.Map(document.getElementById('map'), {
-  //     zoom: 13,
-  //     center: sb,
-  //     scrollwheel: false
-  //   });
-  //   var marker = new google.maps.Marker({
-  //     position: sb,
-  //     map: map
-  //   });
-  // }
+// *--pie chart--*
+
+function getPie (el) {
+  console.log(el, 'in getPie');
+  var el = document.getElementById(el); // get canvas
+
+  var options = {
+      percent:  el.getAttribute('data-percent') || 25,
+      size: el.getAttribute('data-size') || 220,
+      lineWidth: el.getAttribute('data-line') || 15,
+      rotate: el.getAttribute('data-rotate') || 0
+  }
+
+  var canvas = document.createElement('canvas');
+  var span = document.createElement('span');
+  span.className = 'pie';
+  span.textContent = options.percent + '%';
+      
+  if (typeof(G_vmlCanvasManager) !== 'undefined') {
+      G_vmlCanvasManager.initElement(canvas);
+  }
+
+  var ctx = canvas.getContext('2d');
+  canvas.width = canvas.height = options.size;
+
+  el.appendChild(span);
+  el.appendChild(canvas);
+
+  ctx.translate(options.size / 2, options.size / 2); // change center
+  ctx.rotate((-1 / 2 + options.rotate / 180) * Math.PI); // rotate -90 deg
+
+  //imd = ctx.getImageData(0, 0, 240, 240);
+  var radius = (options.size - options.lineWidth) / 2;
+
+  var drawCircle = function(color, lineWidth, percent) {
+      percent = Math.min(Math.max(0, percent || 1), 1);
+      ctx.beginPath();
+      ctx.arc(0, 0, radius, 0, Math.PI * 2 * percent, false);
+      ctx.strokeStyle = color;
+          ctx.lineCap = 'round'; // butt, round or square
+      ctx.lineWidth = lineWidth
+      ctx.stroke();
+  };
+
+  drawCircle('#efefef', options.lineWidth, 100 / 100);
+  drawCircle('#555555', options.lineWidth, options.percent / 100);
+
+}
+
+getPie('graph1', 'English');
+getPie('graph2', 'Cantonese');
+getPie('graph3', 'Mandarin');
 
 
+function initMap() {
+  console.log('invoked?')
+  var sb = {lat: 37.6305, lng: -122.4111};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 13,
+    center: sb,
+    scrollwheel: false
+  });
+  var marker = new google.maps.Marker({
+    position: sb,
+    map: map
+  });
+}
 
 (function($){
   $(function(){
@@ -44,6 +96,7 @@
     ];
     Materialize.scrollFire(options);
 
+
     
     // *---project photo slider---*
 
@@ -58,11 +111,11 @@
     function showDivs(n, current) {
         var i;
         if (current) {
-          current = 'project-img' + current;
+          current = 'p-img' + current;
         } else {
-          current = 'project-img1';
+          current = 'p-img1';
         }
-        // current = current ? 'project-img' + current || 'project-img';
+        // current = current ? 'p-img' + current || 'project-img';
         var x = document.getElementsByClassName(current);
         console.log(x, slideIndex, current, 'in showDivs')
         if (n > x.length) {slideIndex = 1} 
