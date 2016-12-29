@@ -29,10 +29,23 @@ p {
 }
 
 .header-pax {
-  color: #64b5f6;
+  color: #fff;
   font-size: 2em;
   font-weight: 300;
-  text-shadow: 1px 1px grey;
+  opacity: 0.8;
+}
+
+.header-pax em {
+  color: #64b5f6;
+}
+
+.row.center.q {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 35px;
+}
+
+.container.c-q {
+  line-height: 2.5;
 }
 
 .header1 {
