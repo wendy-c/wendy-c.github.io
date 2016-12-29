@@ -74,6 +74,16 @@ function initMap() {
     $('.carousel.carousel-slider').carousel({full_width: true});
     $('.materialboxed').materialbox();
 
+    // animate icon 
+    setInterval(function() {
+      var isAnimated = $('.fa-arrow-down').hasClass('animated pulse');
+      if (isAnimated) {
+        $('.fa-arrow-down').removeClass('animated pulse');
+      } else {
+        $('.fa-arrow-down').addClass('animated pulse');
+      }
+    }, 3000);
+
     // // smooth scroll
     $('.scroll a[href*="#"]:not([href="#"])').click(function() {
       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
