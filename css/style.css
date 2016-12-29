@@ -33,14 +33,19 @@ p {
   font-size: 2em;
   font-weight: 300;
   opacity: 0.8;
+  text-shadow: 1px 1px rgba(200, 200, 200, 0.4)
 }
 
 .header-pax em {
   color: #64b5f6;
 }
 
+.header-pax i {
+  color: orange;
+}
+
 .row.center.q {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(200, 200, 200, 0.4);
   border-radius: 35px;
 }
 
