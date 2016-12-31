@@ -1,0 +1,385 @@
+/*global variables and @mixin*/
+
+$blue: #64b5f6;
+$bg: #f5f5f5;
+
+@mixin colorSize($color, $size) {
+  color: $color;
+  font-size: $size;
+}
+
+@mixin pad($top: 0px, $right: 0px, $bottom: 0px, $left: 0px) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+}
+
+@mixin rounded($color, $width: 1px) {
+  border-radius: 30px;
+  border: $width solid $color;
+}
+
+nav {
+  ul a {
+    color: #444;
+  }
+  .brand-logo {
+    padding-left: 10px; 
+    color: $blue;
+    font-weight: 400;
+  }
+}
+
+p {
+  line-height: 2rem;
+  font-size: 1.2em;
+}
+
+.header {
+  @include colorSize($blue, 3.5em);
+  margin-top: 10%;
+}
+
+.header-pax {
+  color: #fff;
+  font-size: 2em;
+  font-weight: 300;
+  opacity: 0.8;
+  text-shadow: 1px 1px rgba(200, 200, 200, 0.4);
+  em {
+    color: $blue;
+  }
+  i {
+    color: orange;
+  }
+}
+
+.row.center.q {
+  background-color: rgba(200, 200, 200, 0.4);
+  border-radius: 35px;
+}
+
+.container.c-q {
+  line-height: 2.5;
+}
+
+.header1 {
+  @include colorSize($blue, 1.8em);
+  font-weight: 400;
+}
+
+.header2 {
+  font-size: 2.3em;
+  padding: 15px;
+}
+
+.header3 {
+  @include colorSize(orange, 1.5em);
+  @include rounded(orange);
+  background-color: #fff;
+  opacity: 0.7;
+  padding-left: 10px;
+  padding-right: 10px; 
+}
+
+.p-des {
+  @include colorSize($blue, 1.2em);
+}
+
+.time {
+  @include colorSize($blue, 1.3em);
+}
+
+.bub {
+  display: inline;
+  border-radius: 30px;
+  background-color: #fff;
+  opacity: 0.7;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.icon {
+  margin-top: 20px;
+  margin-right: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.button-collapse {
+  margin-right: 2px;
+  color: grey;
+}
+
+.heading {
+  font-size: 1.5em;
+  background-color: #fff;
+  border-bottom: 2px dashed orange;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.p-head {
+  margin-bottom: 0;
+}
+
+.bk-grey {
+  background-color: $bg;
+}
+
+.parallax-container {
+  min-height: 550px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+  .section {
+    width: 100%;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+  .material-icons{
+    font-size: inherit;
+  }
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+.bk {
+  background-color: $bg;
+  padding-top: 30px;
+}
+
+.download {
+  @include colorSize($blue, 2em);
+  @include rounded($blue, 2px);
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #fff;
+  &:hover {
+    background-color: $blue;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+.project {
+  width: 100%;
+}
+
+.p-img, .p-img1, .p-img2, .p-img3, .p-img4, .p-img5 {
+  display: block;
+  width: 80%;
+  margin: 20px auto;
+  padding: 2px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.p-link {
+  font-size: 1.1em;
+  &:hover {
+    color: orange;
+  }
+}
+
+.skillbox {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.a-skillbox {
+  padding-top: 0;
+}
+
+.a-img {
+  margin-top: 18%;
+  margin-left: 0;
+}
+
+.p-slider {
+  position: relative;
+  width: 100%;
+  i {
+    font-size: 1.8em;
+  }
+}
+
+
+/* mini-projects */
+
+@mixin minip {
+  width: 100%;
+  height: 200px;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 2px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.p-mini1 {
+  @include minip;
+  background-image: url('../assets/weatherman.png');
+}
+
+.weatherman {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: #fff;
+}
+
+.close-m1 {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: $blue;
+}
+
+.p-mini2 {
+  @include minip;
+  background-image: url('../assets/tictactoe.png');
+}
+
+.p-mini3 {
+  @include minip;
+  background-image: url('../assets/pacman.png');
+}
+
+/* slider left and right arrow */
+
+%display {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  color: $blue;
+  cursor: pointer;
+  &:hover {
+    color: grey;
+  }
+}
+
+.display-left{
+  @extend %display;
+  left: 0;
+}
+
+.display-right{
+  @extend %display;
+  right: 0;
+}
+
+.tabs .indicator {
+  background-color: orange !important;
+}
+
+.tabs li.tab a {
+  color: grey !important;
+
+}
+
+.carousel.carousel-slider {
+  height: 500px;
+}
+
+#map {
+  height: 300px;
+  width: 100%;
+  background-color: grey;
+}
+
+.send-btn {
+  @include colorSize($blue, 1.5em);
+  @include rounded($blue);
+  float: right;
+  background-color: #fff !important;
+  padding: 5px;
+}
+
+.input-field input[type=text]:focus + label {
+  color: $blue;
+}
+
+.input-field input[type=email]:focus + label {
+  color: $blue;
+}
+
+.input-field input[type=text]:focus {
+ border-bottom: 1px solid $blue;
+ box-shadow: 0 1px 0 0 $blue;
+}
+
+.input-field input[type=email]:focus {
+ border-bottom: 1px solid $blue;
+ box-shadow: 0 1px 0 0 $blue;
+}
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 20%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+
+  .header h2 {
+    font-size: 0.8em;
+  }
+}
+
+@media only screen and (max-width : 320px) {
+  #index-banner .section {
+    top: 0;
+  }
+
+  .header h2 {
+    font-size: 0.6em;
+  }
+}
+
+/* pie chart */
+.chart {
+    position:relative;
+    width:180px; height:180px;
+    margin-bottom: 20px;
+}
+canvas {
+    display: block;
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    margin: 0 auto;
+}
+.pie {
+    color:#555;
+    display:block;
+    text-align:center;
+    width:100%;
+    font-family:sans-serif;
+    font-size:40px;
+    font-weight:100;
+}
+
+.pie-t {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding-top: 45px;
+}
