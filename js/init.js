@@ -1,7 +1,6 @@
 // *--pie chart--*
 
 function getPie (el) {
-  console.log(el, 'in getPie');
   var el = document.getElementById(el); // get canvas
 
   var options = {
@@ -17,7 +16,7 @@ function getPie (el) {
   span.textContent = options.percent + '%';
       
   if (typeof(G_vmlCanvasManager) !== 'undefined') {
-      G_vmlCanvasManager.initElement(canvas);
+    G_vmlCanvasManager.initElement(canvas);
   }
 
   var ctx = canvas.getContext('2d');
@@ -37,8 +36,8 @@ function getPie (el) {
       ctx.beginPath();
       ctx.arc(0, 0, radius, 0, Math.PI * 2 * percent, false);
       ctx.strokeStyle = color;
-          ctx.lineCap = 'round'; // butt, round or square
-      ctx.lineWidth = lineWidth
+      ctx.lineCap = 'round'; // butt, round or square
+      ctx.lineWidth = lineWidth;
       ctx.stroke();
   };
 
@@ -53,7 +52,6 @@ getPie('graph3', 'Mandarin');
 
 // Google Map
 function initMap() {
-  console.log('invoked?')
   var sb = {lat: 37.6305, lng: -122.4111};
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 13,
@@ -82,9 +80,9 @@ function initMap() {
       } else {
         $('.fa-arrow-down').addClass('animated pulse');
       }
-    }, 3000);
+    }, 2000);
 
-    // // smooth scroll
+    // smooth scroll
     $('.scroll a[href*="#"]:not([href="#"])').click(function() {
       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
         var target = $(this.hash);
@@ -99,9 +97,6 @@ function initMap() {
     });
 
     var options = [
-      // {selector: '#about-des', offset: 50, callback: function(el) {
-      //   $('#about-des').slideDown('slow');
-      // } },
       {selector: '#about', offset: 500, callback: function(el) {
           $('#nav').addClass('navbar-fixed');
       } },
@@ -128,26 +123,27 @@ function initMap() {
     showDivs(slideIndex);
 
     function plusDivs(n, current) {
-      console.log(slideIndex, 'in plusDivs')
         showDivs(slideIndex += n, current);
     }
 
     function showDivs(n, current) {
-        var i;
-        if (current) {
-          current = 'p-img' + current;
-        } else {
-          current = 'p-img1';
-        }
-        // current = current ? 'p-img' + current || 'project-img';
-        var x = document.getElementsByClassName(current);
-        console.log(x, slideIndex, current, 'in showDivs')
-        if (n > x.length) {slideIndex = 1} 
-        if (n < 1) {slideIndex = x.length} ;
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none"; 
-        }
-        x[slideIndex-1].style.display = "block"; 
+      var i;
+      if (current) {
+        current = 'p-img' + current;
+      } else {
+        current = 'p-img1';
+      }
+      var x = document.getElementsByClassName(current);
+      if (n > x.length) {
+        slideIndex = 1;
+      } 
+      if (n < 1) {
+        slideIndex = x.length;
+      }
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = 'none'; 
+      }
+      x[slideIndex - 1].style.display = 'block'; 
     }
 
     $('.display-left').on('click', function() {
@@ -157,7 +153,6 @@ function initMap() {
     });
     $('.display-right').on('click', function() {
       var currentClass = $(this).data('val');
-      console.log(currentClass, 'wat is current class?');
       plusDivs(1, currentClass);
     });
 
