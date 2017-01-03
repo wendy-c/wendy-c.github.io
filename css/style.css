@@ -135,6 +135,10 @@ footer.page-footer {
   border: 1px solid grey;
   border-radius: 5px; }
 
+.p-text {
+  color: #64b5f6;
+  font-size: 0.8em; }
+
 .p-link {
   font-size: 1.1em; }
   .p-link:hover {

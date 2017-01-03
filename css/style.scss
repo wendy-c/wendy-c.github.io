@@ -180,6 +180,10 @@ footer.page-footer {
   border-radius: 5px;
 }
 
+.p-text {
+  @include colorSize($blue, 0.8em);
+}
+
 .p-link {
   font-size: 1.1em;
   &:hover {

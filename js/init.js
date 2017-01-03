@@ -4,11 +4,11 @@ function getPie (el) {
   var el = document.getElementById(el); // get canvas
 
   var options = {
-      percent:  el.getAttribute('data-percent') || 25,
-      size: el.getAttribute('data-size') || 220,
-      lineWidth: el.getAttribute('data-line') || 15,
-      rotate: el.getAttribute('data-rotate') || 0
-  }
+    percent: el.getAttribute('data-percent') || 25,
+    size: el.getAttribute('data-size') || 220,
+    lineWidth: el.getAttribute('data-line') || 15,
+    rotate: el.getAttribute('data-rotate') || 0
+  };
 
   var canvas = document.createElement('canvas');
   var span = document.createElement('span');
@@ -32,13 +32,13 @@ function getPie (el) {
   var radius = (options.size - options.lineWidth) / 2;
 
   var drawCircle = function(color, lineWidth, percent) {
-      percent = Math.min(Math.max(0, percent || 1), 1);
-      ctx.beginPath();
-      ctx.arc(0, 0, radius, 0, Math.PI * 2 * percent, false);
-      ctx.strokeStyle = color;
-      ctx.lineCap = 'round'; // butt, round or square
-      ctx.lineWidth = lineWidth;
-      ctx.stroke();
+    percent = Math.min(Math.max(0, percent || 1), 1);
+    ctx.beginPath();
+    ctx.arc(0, 0, radius, 0, Math.PI * 2 * percent, false);
+    ctx.strokeStyle = color;
+    ctx.lineCap = 'round'; // butt, round or square
+    ctx.lineWidth = lineWidth;
+    ctx.stroke();
   };
 
   drawCircle('#efefef', options.lineWidth, 100 / 100);
@@ -64,8 +64,8 @@ function initMap() {
   });
 }
 
-(function($){
-  $(function(){
+(function($) {
+  $(function() {
 
     $('.button-collapse').sideNav();
     $('.parallax').parallax();
