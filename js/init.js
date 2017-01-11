@@ -1,3 +1,5 @@
+
+
 // *--pie chart--*
 
 function getPie (el) {
@@ -66,6 +68,7 @@ function initMap() {
 
 (function($) {
   $(function() {
+    new WOW().init();
 
     $('.button-collapse').sideNav();
     $('.parallax').parallax();
