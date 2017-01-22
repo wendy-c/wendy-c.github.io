@@ -68,7 +68,7 @@ function initMap() {
 
 (function($) {
   $(function() {
-    new WOW().init();
+    new WOW({mobile: false}).init();
 
     $('.button-collapse').sideNav();
     $('.parallax').parallax();
