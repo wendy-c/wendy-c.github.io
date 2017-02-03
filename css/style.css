@@ -277,13 +277,23 @@ footer.page-footer {
     top: 0; }
 
   .header h2 {
-    font-size: 0.8em; } }
+    font-size: 0.8em; }
+
+  .header-pax {
+    font-size: 1.4em; } }
 @media only screen and (max-width: 320px) {
   #index-banner .section {
     top: 0; }
 
   .header h2 {
-    font-size: 0.6em; } }
+    font-size: 0.6em; }
+
+  .header-pax {
+    font-size: 1.5em; }
+
+  .download {
+    color: #64b5f6;
+    font-size: 1.6em; } }
 /* pie chart */
 .chart {
   position: relative;

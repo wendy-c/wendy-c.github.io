@@ -143,7 +143,7 @@ p {
   .material-icons{
     font-size: inherit;
   }
-}
+} 
 
 footer.page-footer {
   margin: 0;
@@ -345,6 +345,10 @@ footer.page-footer {
   .header h2 {
     font-size: 0.8em;
   }
+
+  .header-pax {
+    font-size: 1.4em;
+  }
 }
 
 @media only screen and (max-width : 320px) {
@@ -354,6 +358,14 @@ footer.page-footer {
 
   .header h2 {
     font-size: 0.6em;
+  }
+
+  .header-pax {
+    font-size: 1.5em;
+  }
+
+  .download {
+    @include colorSize($blue, 1.6em);
   }
 }
 
