@@ -299,6 +299,7 @@ footer.page-footer {
   position: relative;
   width: 180px;
   height: 180px;
+  margin: auto;
   margin-bottom: 20px; }
 
 canvas {
