@@ -202,6 +202,9 @@ a {
 .parallax-container .section {
   width: 100%;
 }
+.parallax-container .container {
+  margin: 0 5%;
+}
 
 .parallax {
   background-color: #000;
@@ -242,30 +245,15 @@ footer.page-footer {
   width: 100%;
 }
 
-.p-img, .p-img1, .p-img2, .p-img3, .p-img4, .p-img5 {
-  display: block;
-  width: 80%;
-  margin: 20px auto;
-  padding: 2px;
-  border: 1px solid grey;
-  border-radius: 5px;
-}
-
-.p-text {
-  color: #64b5f6;
-  font-size: 0.8em;
-}
-
-.p-link {
-  font-size: 1.1em;
-}
-.p-link:hover {
-  color: orange;
-}
-
 .skillbox {
   padding-top: 20px;
   padding-bottom: 20px;
+}
+.skillbox a {
+  color: rgba(0, 0, 0, 0.6);
+}
+.skillbox a:hover {
+  color: #016450;
 }
 
 .a-skillbox {
@@ -276,105 +264,13 @@ footer.page-footer {
   margin: 40px 10px 0;
 }
 
-.p-slider {
-  position: relative;
-  width: 100%;
-}
-.p-slider i {
-  font-size: 1.8em;
-}
-
-/* mini-projects */
-.p-mini1 {
-  width: 100%;
-  height: 200px;
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 2px;
-  border: 1px solid grey;
-  border-radius: 5px;
-  margin: 10px;
-  background-image: url("../assets/weatherman.png");
-}
-
-.weatherman {
-  display: none;
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  background-color: #fff;
-}
-
-.close-m1 {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  color: #64b5f6;
-}
-
-.p-mini2 {
-  width: 100%;
-  height: 200px;
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 2px;
-  border: 1px solid grey;
-  border-radius: 5px;
-  margin: 10px;
-  background-image: url("../assets/tictactoe.png");
-}
-
-.p-mini3 {
-  width: 100%;
-  height: 200px;
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 2px;
-  border: 1px solid grey;
-  border-radius: 5px;
-  margin: 10px;
-  background-image: url("../assets/pacman.png");
-}
-
-/* slider left and right arrow */
-.display-right, .display-left {
-  position: absolute;
-  top: 50%;
-  z-index: 10;
-  color: #64b5f6;
-  cursor: pointer;
-}
-.display-right:hover, .display-left:hover {
-  color: grey;
-}
-
-.display-left {
-  left: 0;
-}
-
-.display-right {
-  right: 0;
-}
-
-.tabs .indicator {
-  background-color: orange !important;
-}
-
-.tabs li.tab a {
-  color: grey !important;
-}
-
 @media only screen and (max-width: 780px) {
   #index-banner .section {
     top: 0;
   }
 
   .icons {
-    transform: rotate(-30deg) translateX(200px) translateY(464px);
+    transform: rotate(-30deg) translateX(135px) translateY(464px);
   }
 }
 @media only screen and (max-width: 612px) {
@@ -383,15 +279,15 @@ footer.page-footer {
   }
 
   .title {
-    font-size: 2em;
+    font-size: 2.5em;
   }
   .title.name {
     transform: rotate(0deg);
-    margin: 5px 0;
+    top: 190px;
   }
   .title.pos {
     transform: rotate(0deg);
-    margin: auto;
+    top: 245px;
   }
 
   .time {
@@ -401,7 +297,7 @@ footer.page-footer {
 
   .icons {
     transform: unset;
-    top: 280px;
+    top: 306px;
   }
 }
 /* pie chart */
